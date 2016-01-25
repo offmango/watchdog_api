@@ -1,4 +1,4 @@
-class ZapplicationEvent < ActiveRecord::Base
+class Event < ActiveRecord::Base
 
   self.table_name = "ZAPPLICATION"
 
@@ -8,6 +8,10 @@ class ZapplicationEvent < ActiveRecord::Base
 
   def end_time
     converted_time(self.ZENDDATE)
+  end
+
+  def display_name
+    self.ZDISPNAME
   end
 
   private
